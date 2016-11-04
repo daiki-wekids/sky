@@ -12,6 +12,8 @@ var app = express();
 
 //app.use('/styles', express.static(__dirname + '/styles'));
 app.use(express.static(__dirname + '/public'));
+res.writeHead(200, {'Content-Type' : 'text/html'});
+res.end(fs.readFileSync(__dirname + '/index.html', 'utf-8'));
 /*
   if ('/' == url) {
       res.writeHead(200, {'Content-Type' : 'text/html'});
